@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Servicio y Política de Privacidad - SelkieBOT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #6200ea;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin-bottom: 80px; /* Espacio para el footer */
+        }
+        h2 {
+            color: #6200ea;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1em;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-content {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #6200ea;
+        }
+        .section-title {
+            cursor: pointer;
+            background-color: #6200ea;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .section-title:hover {
+            background-color: #3700b3;
+        }
+        footer {
+            text-align: center;
+            background-color: #6200ea;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-icons {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .contact-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .contact-icons img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .contact-icons a:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Términos de Servicio y Política de Privacidad - SelkieBOT
+</header>
+
+<div class="container">
+    <!-- Términos de Servicio -->
+    <div class="section" id="tos">
+        <h2>Términos de Servicio (ToS) de SelkieBOT</h2>
+        <div class="section-title" onclick="toggleSection('tos')">Ver/ocultar detalles</div>
+        <div class="section-content">
+            <p><strong>Última actualización:</strong> 20/1/2025</p>
+            <p><strong>Aceptación de los Términos:</strong> Al utilizar SelkieBOT, aceptas estos Términos de Servicio. Si no estás de acuerdo con alguna de las disposiciones, no utilices el bot.</p>
+            <p><strong>Uso Permitido:</strong> SelkieBOT está diseñado para ser utilizado en servidores de Discord para la reproducción de música, juegos y entretenimiento general. El bot no debe ser utilizado para realizar actividades maliciosas, spam, acoso o violación de las políticas de Discord. No se permite el uso de SelkieBOT para reproducir música desde fuentes como Spotify o YouTube sin respetar las normativas de derechos de autor y DRM.</p>
+            <p><strong>Funcionalidades del Bot:</strong> SelkieBOT permite reproducir canciones a través de enlaces de plataformas como YouTube y Spotify, pero de acuerdo con las restricciones de derechos de autor. Además, los usuarios pueden interactuar con SelkieBOT utilizando comandos como "/adivina" y "/trivia" para participar en juegos y minijuegos.</p>
+            <p><strong>Suspensión de Funciones:</strong> Si un usuario hace mal uso de las funciones del bot, SelkieBOT aplicará una suspensión temporal de las funciones afectadas. Si el abuso persiste, el bot eliminará permanentemente las capacidades del usuario para utilizar la aplicación.</p>
+            <p><strong>Modificaciones del Servicio:</strong> Nos reservamos el derecho de modificar o descontinuar SelkieBOT en cualquier momento sin previo aviso. Los cambios importantes serán notificados a los usuarios, pero no se garantiza que todos los cambios sean comunicados de inmediato.</p>
+            <p><strong>Limitación de Responsabilidad:</strong> SelkieBOT se ofrece "tal como está" y no nos hacemos responsables por daños directos o indirectos derivados del uso del bot. El uso del bot es bajo tu propio riesgo.</p>
+            <p><strong>Cambios en los Términos:</strong> Podemos actualizar estos Términos de Servicio en cualquier momento. Los cambios se publicarán en este documento con la fecha de la última actualización.</p>
+            <p><strong>Ley Aplicable:</strong> Estos Términos de Servicio están regidos por las leyes de [tu país o estado], y cualquier disputa relacionada será resuelta en los tribunales de [tu país o estado].</p>
+        </div>
+    </div>
+
+    <!-- Política de Privacidad -->
+    <div class="section" id="privacy">
+        <h2>Política de Privacidad de SelkieBOT</h2>
+        <div class="section-title" onclick="toggleSection('privacy')">Ver/ocultar detalles</div>
+        <div class="section-content">
+            <p><strong>Última actualización:</strong> 20/1/2025</p>
+            <p><strong>Información Recopilada:</strong> SelkieBOT recopila el ID de usuario de Discord, nombre de usuario y los comandos ejecutados para ofrecer un servicio eficiente. Registramos las canciones solicitadas por los usuarios y sus interacciones con los comandos de trivia y otros juegos.</p>
+            <p><strong>Uso de la Información:</strong> La información recopilada se utiliza exclusivamente para mejorar la funcionalidad de SelkieBOT y proporcionar una experiencia personalizada en los comandos de música y entretenimiento. No almacenamos datos personales sensibles como contraseñas o información privada. Si en el futuro se almacenan datos, se implementará un sistema de encriptación.</p>
+            <p><strong>Servicios de Terceros:</strong> SelkieBOT utiliza APIs de terceros como OpenTDB para trivia y Google Translator para la traducción de texto. Estos servicios pueden recopilar datos según sus propias políticas de privacidad, pero SelkieBOT no comparte directamente tus datos con ellos, a excepción de las interacciones necesarias para el funcionamiento del bot.</p>
+            <p><strong>Seguridad:</strong> Implementamos medidas de seguridad razonables para proteger la información, pero no podemos garantizar la seguridad total de los datos transmitidos a través de Internet.</p>
+            <p><strong>Acceso y Control de los Datos:</strong> Actualmente, SelkieBOT no almacena datos a largo plazo. Si en el futuro se recopilan datos más sensibles, los usuarios serán notificados y se les permitirá controlar o eliminar sus datos.</p>
+            <p><strong>Uso de Cookies:</strong> SelkieBOT no utiliza cookies ni tecnologías de rastreo en la plataforma Discord. Sin embargo, si en el futuro se agrega una página web, se te notificará sobre el uso de cookies.</p>
+            <p><strong>Menores de Edad:</strong> SelkieBOT no tiene restricciones de edad para su uso. Sin embargo, los usuarios menores de edad deben tener el consentimiento de sus tutores para interactuar con el bot.</p>
+            <p><strong>Cambios en la Política de Privacidad:</strong> Podemos actualizar esta Política de Privacidad en cualquier momento. Los cambios serán publicados en este documento con la fecha de la última actualización.</p>
+            <p><strong>Contacto:</strong> Si tienes preguntas o inquietudes sobre esta política de privacidad, puedes contactarnos a través de [Correo electrónico o método de contacto].</p>
+        </div>
+    </div>
+
+    <!-- Exención de Responsabilidad -->
+    <div class="section" id="disclaimer">
+        <h2>Exención de Responsabilidad</h2>
+        <div class="section-title" onclick="toggleSection('disclaimer')">Ver/ocultar detalles</div>
+        <div class="section-content">
+            <p>No nos hacemos responsables de ningún uso malicioso o inapropiado de SelkieBOT, ya sea por parte de usuarios individuales o grupos, que infrinja las leyes locales o las normas de Discord. El uso del bot es bajo la responsabilidad del usuario.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2025 SelkieBOT. Todos los derechos reservados.
+</footer>
+
+<!-- Contact Icons (Discord & Gmail) -->
+<div class="contact-icons">
+    <a href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot" target="_blank">
+        <img src="https://imgs.search.brave.com/l5ArbhPxh4hNl17dDdUzN39t6JFmraBTlvtsDoeehdk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZG93bmxvYWQub3Jn/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE3/LzExL2Rpc2NvcmQt/bG9nby0wLnBuZw" alt="Discord Logo">
+    </a>
+    <a href="mailto:your-email@example.com" target="_blank">
+        <img src="https://imgs.search.brave.com/jFmFDrCTPMA8z45brWdMcu02rHvnwxWsV5_KaxLCu0A/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tYWls/bWV0ZW9yLmNvbS9s/b2dvcy9hc3NldHMv/UE5HL0dtYWlsX0xv/Z29fMTI4cHgucG5n" alt="Gmail Logo">
+    </a>
+</div>
+
+<script>
+    function toggleSection(sectionId) {
+        const sectionContent = document.getElementById(sectionId).querySelector('.section-content');
+        const display = sectionContent.style.display === "block" ? "none" : "block";
+        sectionContent.style.display = display;
+    }
+</script>
+
+</body>
+</html>
