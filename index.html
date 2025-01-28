@@ -3,177 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Términos de Servicio y Política de Privacidad - SelkieBOT</title>
+    <title>Portafolio de Pablorelojero</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        header {
-            background-color: #6200ea;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 2em;
+
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --dark: #0f172a;
+            --light: #fff;
         }
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            margin-bottom: 80px; /* Espacio para el footer */
-        }
-        h2 {
-            color: #6200ea;
-        }
-        p {
+
+        body {
+            background: var(--dark);
+            color: var(--light);
             line-height: 1.6;
-            font-size: 1em;
+            overflow-x: hidden;
         }
-        .section {
-            margin-bottom: 30px;
+        
+        html {
+            scroll-behavior: smooth;
         }
-        .section-content {
-            display: none;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-left: 3px solid #6200ea;
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .section-title {
-            cursor: pointer;
-            background-color: #6200ea;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .section-title:hover {
-            background-color: #3700b3;
-        }
-        footer {
-            text-align: center;
-            background-color: #6200ea;
-            color: white;
-            padding: 10px;
+
+        /* Fondo animado */
+        .animated-bg {
             position: fixed;
-            bottom: 0;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 60px;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0f172a, #1e293b);
+            overflow: hidden;
+        }
+
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent 20%, var(--dark) 80%),
+                        linear-gradient(to right, var(--primary), var(--secondary));
+            animation: bgAnimation 15s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes bgAnimation {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Header Mejorado */
+        header {
+            height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-        }
-        .contact-icons {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            display: flex;
-            gap: 15px;
-            z-index: 1000;
-        }
-        .contact-icons a {
-            display: flex;
             justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
-        .contact-icons img {
-            width: 25px;
-            height: 25px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
+
+        .header-content {
+            text-align: center;
+            z-index: 1;
+            position: relative;
         }
-        .contact-icons a:hover img {
+
+        .header-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleAnimation 1.5s ease;
+        }
+
+        .header-content p {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.5s both;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Botón mejorado */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Proyectos mejorados */
+        .projects {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about, .contact {
+            padding: 100px 0;
+        }
+
+        .contact ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .contact ul li {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .project-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card:hover .project-img img {
             transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Habilidades mejoradas */
+        .skills {
+            padding: 100px 0;
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .skill-item {
+            background: rgba(51, 65, 85, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            width: 170px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+
+        .skill-item:hover::before {
+            animation: shine 1.5s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+        }
+
+        /* Animaciones mejoradas */
+        @keyframes titleAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+
+        /* Elementos decorativos */
+        .decoration {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            filter: blur(50px);
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .decoration-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation: float 8s infinite;
+        }
+
+        .decoration-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 10%;
+            right: 5%;
+            animation: float 6s infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Scroll personalizado */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary), var(--secondary));
+            border-radius: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 3rem;
+            }
+            .header-content p {
+                font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="animated-bg"></div>
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
 
-<header>
-    Términos de Servicio y Política de Privacidad - SelkieBOT
-</header>
-
-<div class="container">
-    <!-- Términos de Servicio -->
-    <div class="section" id="tos">
-        <h2>Términos de Servicio (ToS) de SelkieBOT</h2>
-        <div class="section-title" onclick="toggleSection('tos')">Ver/ocultar detalles</div>
-        <div class="section-content">
-            <p><strong>Última actualización:</strong> 20/1/2025</p>
-            <p><strong>Aceptación de los Términos:</strong> Al utilizar SelkieBOT, aceptas estos Términos de Servicio. Si no estás de acuerdo con alguna de las disposiciones, no utilices el bot.</p>
-            <p><strong>Uso Permitido:</strong> SelkieBOT está diseñado para ser utilizado en servidores de Discord para la reproducción de música, juegos y entretenimiento general. El bot no debe ser utilizado para realizar actividades maliciosas, spam, acoso o violación de las políticas de Discord. No se permite el uso de SelkieBOT para reproducir música desde fuentes como Spotify o YouTube sin respetar las normativas de derechos de autor y DRM.</p>
-            <p><strong>Funcionalidades del Bot:</strong> SelkieBOT permite reproducir canciones a través de enlaces de plataformas como YouTube y Spotify, pero de acuerdo con las restricciones de derechos de autor. Además, los usuarios pueden interactuar con SelkieBOT utilizando comandos como "/adivina" y "/trivia" para participar en juegos y minijuegos.</p>
-            <p><strong>Suspensión de Funciones:</strong> Si un usuario hace mal uso de las funciones del bot, SelkieBOT aplicará una suspensión temporal de las funciones afectadas. Si el abuso persiste, el bot eliminará permanentemente las capacidades del usuario para utilizar la aplicación.</p>
-            <p><strong>Modificaciones del Servicio:</strong> Nos reservamos el derecho de modificar o descontinuar SelkieBOT en cualquier momento sin previo aviso. Los cambios importantes serán notificados a los usuarios, pero no se garantiza que todos los cambios sean comunicados de inmediato.</p>
-            <p><strong>Limitación de Responsabilidad:</strong> SelkieBOT se ofrece "tal como está" y no nos hacemos responsables por daños directos o indirectos derivados del uso del bot. El uso del bot es bajo tu propio riesgo.</p>
-            <p><strong>Cambios en los Términos:</strong> Podemos actualizar estos Términos de Servicio en cualquier momento. Los cambios se publicarán en este documento con la fecha de la última actualización.</p>
-            <p><strong>Ley Aplicable:</strong> Estos Términos de Servicio están regidos por las leyes de [tu país o estado], y cualquier disputa relacionada será resuelta en los tribunales de [tu país o estado].</p>
+    <header>
+        <div class="header-content">
+            <h1>Pablo</h1>
+            <p>Developer de Discord y de Minecraft</p>
+            <a href="#projects" class="btn">Ver Proyectos</a>
         </div>
-    </div>
+    </header>
 
-    <!-- Política de Privacidad -->
-    <div class="section" id="privacy">
-        <h2>Política de Privacidad de SelkieBOT</h2>
-        <div class="section-title" onclick="toggleSection('privacy')">Ver/ocultar detalles</div>
-        <div class="section-content">
-            <p><strong>Última actualización:</strong> 20/1/2025</p>
-            <p><strong>Información Recopilada:</strong> SelkieBOT recopila el ID de usuario de Discord, nombre de usuario y los comandos ejecutados para ofrecer un servicio eficiente. Registramos las canciones solicitadas por los usuarios y sus interacciones con los comandos de trivia y otros juegos.</p>
-            <p><strong>Uso de la Información:</strong> La información recopilada se utiliza exclusivamente para mejorar la funcionalidad de SelkieBOT y proporcionar una experiencia personalizada en los comandos de música y entretenimiento. No almacenamos datos personales sensibles como contraseñas o información privada. Si en el futuro se almacenan datos, se implementará un sistema de encriptación.</p>
-            <p><strong>Servicios de Terceros:</strong> SelkieBOT utiliza APIs de terceros como OpenTDB para trivia y Google Translator para la traducción de texto. Estos servicios pueden recopilar datos según sus propias políticas de privacidad, pero SelkieBOT no comparte directamente tus datos con ellos, a excepción de las interacciones necesarias para el funcionamiento del bot.</p>
-            <p><strong>Seguridad:</strong> Implementamos medidas de seguridad razonables para proteger la información, pero no podemos garantizar la seguridad total de los datos transmitidos a través de Internet.</p>
-            <p><strong>Acceso y Control de los Datos:</strong> Actualmente, SelkieBOT no almacena datos a largo plazo. Si en el futuro se recopilan datos más sensibles, los usuarios serán notificados y se les permitirá controlar o eliminar sus datos.</p>
-            <p><strong>Uso de Cookies:</strong> SelkieBOT no utiliza cookies ni tecnologías de rastreo en la plataforma Discord. Sin embargo, si en el futuro se agrega una página web, se te notificará sobre el uso de cookies.</p>
-            <p><strong>Menores de Edad:</strong> SelkieBOT no tiene restricciones de edad para su uso. Sin embargo, los usuarios menores de edad deben tener el consentimiento de sus tutores para interactuar con el bot.</p>
-            <p><strong>Cambios en la Política de Privacidad:</strong> Podemos actualizar esta Política de Privacidad en cualquier momento. Los cambios serán publicados en este documento con la fecha de la última actualización.</p>
-            <p><strong>Contacto:</strong> Si tienes preguntas o inquietudes sobre esta política de privacidad, puedes contactarnos a través de [Correo electrónico o método de contacto].</p>
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://imgs.search.brave.com/B5jI-XDfurmu37jmglzOChnqRxlLp32ZtT7QSFO3LoE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzLzczMV9q/YXZhLmpwZw" alt="Proyecto 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Elaboración de Mods y Plugins</h3>
+                        <p>He desarrollado plugins y mods para Fabric y Forge, ideales para eventos y funcionalidades avanzadas de moderación.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://cdn.discordapp.com/attachments/1212526980315086850/1333635741833498654/358A5FBD-0CA6-4939-AFE8-163F28CF8C88.png?ex=67999c92&is=67984b12&hm=3ec6a622f4c49167c1a156e90644b750521c0429aad9e34bfe69df85c7c11aa5&" alt="Proyecto 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>Launcher Custom</h3>
+                        <p>He creado un launcher que descarga instancias personalizadas de Minecraft directamente desde un servidor.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://imgs.search.brave.com/l5ArbhPxh4hNl17dDdUzN39t6JFmraBTlvtsDoeehdk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZG93bmxvYWQub3Jn/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE3/LzExL2Rpc2NvcmQt/bG9nby0wLnBuZw" alt="Proyecto 3">
+                    </div>
+                    <div class="project-content">
+                        <h3>Desarrollo de Discord</h3>
+                        <p>He desarrollado bots de Discord tanto con funciones de moderacion como con funciones de entretenimiento para la comunidad de una streamer como para un studio de minecraft.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="data:image/jpeg;base64,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" alt="Proyecto 4">
+                    </div>
+                    <div class="project-content">
+                        <h3>Configuracion de Networks de Minecraft</h3>
+                        <p>He desarrollado varias Networks de Minecraft tanto con mods o simplemente plugins con un host personalizado creador por mi.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Exención de Responsabilidad -->
-    <div class="section" id="disclaimer">
-        <h2>Exención de Responsabilidad</h2>
-        <div class="section-title" onclick="toggleSection('disclaimer')">Ver/ocultar detalles</div>
-        <div class="section-content">
-            <p>No nos hacemos responsables de ningún uso malicioso o inapropiado de SelkieBOT, ya sea por parte de usuarios individuales o grupos, que infrinja las leyes locales o las normas de Discord. El uso del bot es bajo la responsabilidad del usuario.</p>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <p style="text-align: center; font-size: 1.5rem;">
+            Soy un chico de 15 años con experienca en creacion de recursos tanto para Discord como para Minecraft, busco un desafio que me interese para poder aprender mas y seguir adelante.
+            </p>
         </div>
-    </div>
-</div>
+    </section>
 
-<footer>
-    © 2025 SelkieBOT. Todos los derechos reservados.
-</footer>
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">Mis Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">C++</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Java</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Python</div>
+            </div>
+        </div>
+    </section>
 
-<!-- Contact Icons (Discord & Gmail) -->
-<div class="contact-icons">
-    <a href="https://discord.com/oauth2/authorize?client_id=1318139899433451581&scope=bot&permissions=793834384502" target="_blank">
-        <img src="https://imgs.search.brave.com/l5ArbhPxh4hNl17dDdUzN39t6JFmraBTlvtsDoeehdk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZG93bmxvYWQub3Jn/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE3/LzExL2Rpc2NvcmQt/bG9nby0wLnBuZw" alt="Discord Logo">
-    </a>
-    <a href="SelkieBOTDS@gmail.com" target="_blank">
-        <img src="https://imgs.search.brave.com/jFmFDrCTPMA8z45brWdMcu02rHvnwxWsV5_KaxLCu0A/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tYWls/bWV0ZW9yLmNvbS9s/b2dvcy9hc3NldHMv/UE5HL0dtYWlsX0xv/Z29fMTI4cHgucG5n" alt="Gmail Logo">
-    </a>
-</div>
-
-<script>
-    function toggleSection(sectionId) {
-        const sectionContent = document.getElementById(sectionId).querySelector('.section-content');
-        const display = sectionContent.style.display === "block" ? "none" : "block";
-        sectionContent.style.display = display;
-    }
-</script>
-
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <ul>
+                <li>Discord: pablorelojero</li>
+                <li>Email: pablorelojerodev@gmail.com</li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
